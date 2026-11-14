@@ -143,9 +143,9 @@ The numbering matches the report.
 The full reference list, with access dates, is in the report.
 
 
-## Integrated Study (branch: integrated-study-v2)
+## Integrated Study
 
-This branch extends the original pump and NPSH analysis into a connected pump-system study. The original Excel, DWSIM and report files are unchanged.
+This repository also includes an extension of the original pump and NPSH analysis into a connected pump-system study. The original Excel, DWSIM and report files are unchanged.
 
 ### Components
 1. **Original hydraulic and NPSH analysis** (`excel/`, `dwsim/`, `report/`): operating point of about 70.6 m³/h at 13.45 m head, NPSH versus water temperature, and an FMEA.
