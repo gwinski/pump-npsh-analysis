@@ -97,6 +97,11 @@ pump-npsh-analysis/
 ├── dwsim/
 │   ├── pump_system_25C.dwxmz
 │   └── pump_system_80C.dwxmz
+├── python_verification/
+│   ├── README.md
+│   └── Pump_Hydraulic_Model_Colebrook_Clean.ipynb
+├── cad/
+│   └── (SolidWorks assembly, parts, drawing and STEP export)
 └── images/
     └── (figures from the report)
 ```
@@ -120,7 +125,7 @@ pump-npsh-analysis/
 
 ## Tools
 
-Microsoft Excel (Goal Seek), DWSIM (open-source chemical process simulator).
+Microsoft Excel (Goal Seek), DWSIM (open-source chemical process simulator), Python (NumPy, SciPy, pandas, Matplotlib) in Google Colab, SOLIDWORKS 2026.
 
 ## References
 
@@ -136,3 +141,29 @@ The numbering matches the report.
 8. Cover image: https://www.simscale.com/blog/what-is-centrifugal-pump/
 
 The full reference list, with access dates, is in the report.
+
+
+## Integrated Study
+
+This repository also includes an extension of the original pump and NPSH analysis into a connected pump-system study. The original Excel, DWSIM and report files are unchanged.
+
+### Components
+1. **Original hydraulic and NPSH analysis** (`excel/`, `dwsim/`, `report/`): operating point of about 70.6 m³/h at 13.45 m head, NPSH versus water temperature, and an FMEA.
+2. **Python hydraulic verification** (`python_verification/`): tests the constant friction-factor approximation against the Colebrook–White equation.
+3. **Mechanical arrangement (SolidWorks 2026):** supply tank, suction pipe, pump casing, discharge pipe and delivery tank. The assembly is fully defined with no interferences, and the suction pipe ends 400 mm below the water surface. It is a geometric model, not a structural simulation. The SolidWorks files are in cad/.
+
+### Python verification result
+
+| Parameter | Original model | Colebrook model |
+|---|---|---|
+| Operating flow | 70.5972 m³/h | 70.5877 m³/h |
+| Operating head | 13.4498 m | 13.4508 m |
+| Friction factor at operating point | representative constant | 0.018062 |
+| Reynolds number at operating point | not applicable | 279,353 |
+
+The operating flow differs by 0.01346%. This supports the representative friction factor near the operating point.
+
+### Scope and limitations
+- The Python work checks the friction-factor treatment only. It does not validate the pump curve, the NPSH model or the full installation.
+- The pump curve is a third-order polynomial fitted to datasheet readings.
+- Water properties are fixed at 25°C. Only straight-pipe friction is included, with no minor losses.
