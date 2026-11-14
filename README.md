@@ -100,6 +100,8 @@ pump-npsh-analysis/
 ├── python_verification/
 │   ├── README.md
 │   └── Pump_Hydraulic_Model_Colebrook_Clean.ipynb
+├── cad/
+│   └── (SolidWorks assembly, parts, drawing and STEP export)
 └── images/
     └── (figures from the report)
 ```
@@ -148,7 +150,7 @@ This branch extends the original pump and NPSH analysis into a connected pump-sy
 ### Components
 1. **Original hydraulic and NPSH analysis** (`excel/`, `dwsim/`, `report/`): operating point of about 70.6 m³/h at 13.45 m head, NPSH versus water temperature, and an FMEA.
 2. **Python hydraulic verification** (`python_verification/`): tests the constant friction-factor approximation against the Colebrook–White equation.
-3. **Mechanical arrangement (SolidWorks 2026):** supply tank, suction pipe, pump casing, discharge pipe and delivery tank. The assembly is fully defined with no interferences, and the suction pipe ends 400 mm below the water surface. It is a geometric model, not a structural simulation.
+3. **Mechanical arrangement (SolidWorks 2026):** supply tank, suction pipe, pump casing, discharge pipe and delivery tank. The assembly is fully defined with no interferences, and the suction pipe ends 400 mm below the water surface. It is a geometric model, not a structural simulation. The SolidWorks files are in cad/.
 
 ### Python verification result
 
