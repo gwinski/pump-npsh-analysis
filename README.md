@@ -97,6 +97,9 @@ pump-npsh-analysis/
 ├── dwsim/
 │   ├── pump_system_25C.dwxmz
 │   └── pump_system_80C.dwxmz
+├── python_verification/
+│   ├── README.md
+│   └── Pump_Hydraulic_Model_Colebrook_Clean.ipynb
 └── images/
     └── (figures from the report)
 ```
@@ -120,7 +123,7 @@ pump-npsh-analysis/
 
 ## Tools
 
-Microsoft Excel (Goal Seek), DWSIM (open-source chemical process simulator).
+Microsoft Excel (Goal Seek), DWSIM (open-source chemical process simulator), Python (NumPy, SciPy, pandas, Matplotlib) in Google Colab, SOLIDWORKS 2026.
 
 ## References
 
